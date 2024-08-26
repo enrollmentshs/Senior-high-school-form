@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior High School Enrollment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 70%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="email"], 
+        .form-group input[type="tel"], 
+        .form-group input[type="date"], 
+        .form-group textarea, 
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="radio"] {
+            margin-right: 10px;
+        }
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group input[type="file"] {
+            padding: 5px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Senior High School Enrollment Form</h1>
+        <h2>Please fill out the form below to complete your enrollment.</h2>
+
+        <form action="submit_enrollment.php" method="post" enctype="multipart/form-data">
+            
+            <!-- Student Information Section -->
+            <h3>Student Information</h3>
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="middle_name">Middle Name:</label>
+                <input type="text" id="middle_name" name="middle_name">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" id="male" name="gender" value="Male" required> <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other"> <label for="other">Other</label>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Parent/Guardian Information Section -->
+            <h3>Parent/Guardian Information</h3>
+            <div class="form-group">
+                <label for="guardian_first_name">Guardian's First Name:</label>
+                <input type="text" id="guardian_first_name" name="guardian_first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="guardian_middle_name">Guardian's Middle Name:</label>
+                <input type="text" id="guardian_middle_name" name="guardian_middle_name">
+            </div>
+            <div class="form-group">
+                <label for="guardian_last_name">Guardian's Last Name:</label>
+                <input type="text" id="guardian_last_name" name="guardian_last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="relationship">Relationship to Student:</label>
+                <select id="relationship" name="relationship" required>
+                    <option value="Mother">Mother</option>
+                    <option value="Father">Father</option>
+                    <option value="Guardian">Guardian</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="guardian_phone">Guardian's Phone Number:</label>
+                <input type="tel" id="guardian_phone" name="guardian_phone" required>
+            </div>
+            <div class="form-group">
+                <label for="guardian_email">Guardian's Email Address:</label>
+                <input type="email" id="guardian_email" name="guardian_email" required>
+            </div>
+
+            <!-- Academic Information Section -->
+            <h3>Academic Information</h3>
+            <div class="form-group">
+                <label for="last_school">Last School Attended:</label>
+                <input type="text" id="last_school" name="last_school" required>
+            </div>
+            <div class="form-group">
+                <label for="grade_level">Grade Level Applying For:</label>
+                <select id="grade_level" name="grade_level" required>
+                    <option value="Grade 11">Grade 11</option>
+                    <option value="Grade 12">Grade 12</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="track">Track/Strand:</label>
+                <select id="track" name="track" required>
+                    <option value="STEM">STEM</option>
+                    <option value="ABM">ABM</option>
+                    <option value="HUMSS">HUMSS</option>
+                    <option value="GAS">GAS</option>
+                    <option value="TVL">TVL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="schedule">Preferred Schedule:</label>
+                <select id="schedule" name="schedule" required>
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+            </div>
+
+            <!-- Document Upload Section -->
+            <h3>Upload Required Documents</h3>
+            <div class="form-group">
+                <label for="birth_certificate">Birth Certificate:</label>
+                <input type="file" id="birth_certificate" name="birth_certificate" required>
+            </div>
+            <div class="form-group">
+                <label for="report_card">Report Card:</label>
+                <input type="file" id="report_card" name="report_card" required>
+            </div>
+            <div class="form-group">
+                <label for="good_moral">Good Moral Certificate:</label>
+                <input type="file" id="good_moral" name="good_moral" required>
+            </div>
+            <div class="form-group">
+                <label for="other_documents">Other Documents:</label>
+                <input type="file" id="other_documents" name="other_documents">
+                
+            </div>
+
+            <!-- Confirmation and Submission -->
+            <div class="form-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit Enrollment</button>
+            </div>
+        </form>
+
+        <div class="footer">
+            <p>For inquiries, please contact us at <strong>[School's Address, Phone Number, Email]</strong></p>
+        </div>
+    </div>
+
+</body>
+</html>
